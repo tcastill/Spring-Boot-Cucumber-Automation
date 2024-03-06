@@ -1,12 +1,12 @@
 #!/bin/bash
 
 smoke(){
- mvn clean test -D"cucumber.filter.tags=@smoke" -Dspring.profiles.active=pilot-stable -Dbrowser=chrome -Dheadless=true -Pparallel
+ mvn clean test -D"cucumber.filter.tags=@Smoke" -Dspring.profiles.active=pilot-stable -Dbrowser=chrome -Dheadless=true -Pparallel
  allure serve target/allure-results
 }
 
-profile(){
- mvn clean test -Dcucumber.filter.tags=@smoke -Dbrowser=chrome -Dheadless=true -Pparallel
+test(){
+ mvn clean test -Dcucumber.filter.tags=@Smoke -Dbrowser=chrome -Dheadless=true -Pparallel
  allure serve target/allure-results
 }
 
