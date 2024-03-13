@@ -35,20 +35,20 @@ public class LandingPage extends Base{
 
     public void getAllLinks() {
 
-        Map<String, String> links = new HashMap<>();
-        links.put("Advanced search", "https://www.rhymezone.com/adv/");
-        links.put("Help", "https://www.rhymezone.com/help/");
-        links.put("Feedback", "https://docs.google.com/forms/d/e/1FAIpQLSfZIJ8xjp9uIVKwyYRMlh1ie6s1u3tmtcLUsGjplbgD8m0FXg/viewform");
-        links.put("Privacy", "https://www.rhymezone.com/privacy-policy");
-        links.put("Terms of Use", "https://www.rhymezone.com/terms-of-use");
-        links.put("Do not sell or share my personal information.", "https://www.rhymezone.com/");
+        Map<String, String> expectedLinks = new HashMap<>();
+        expectedLinks.put("Advanced search", "https://www.rhymezone.com/adv/");
+        expectedLinks.put("Help", "https://www.rhymezone.com/help/");
+        expectedLinks.put("Feedback", "https://docs.google.com/forms/d/e/1FAIpQLSfZIJ8xjp9uIVKwyYRMlh1ie6s1u3tmtcLUsGjplbgD8m0FXg/viewform");
+        expectedLinks.put("Privacy", "https://www.rhymezone.com/privacy-policy");
+        expectedLinks.put("Terms of Use", "https://www.rhymezone.com/terms-of-use");
+        expectedLinks.put("Do not sell or share my personal information.", "https://www.rhymezone.com/");
 
         List<String> verification = new ArrayList<>();
 
         List<WebElement> elements =driver. findElements(By. xpath("//*[@href]"));
         for (WebElement element : elements) {
             if(!element.getText().isEmpty()) {
-                String linkName = links.get(element.getText());
+                String linkName = expectedLinks.get(element.getText());
                 String linkValue = element.getAttribute("href");
                 log.info("Checking if page is directing correctly to URL: {} to match with {}", linkName, linkValue);
                 assertEquals(linkValue, linkName);
