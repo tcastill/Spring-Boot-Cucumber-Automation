@@ -36,12 +36,13 @@ public class LandingPage extends Base{
     public void getAllLinks() {
 
         Map<String, String> expectedLinks = new HashMap<>();
+        expectedLinks.put("Play Now", "https://www.merriam-webster.com/games/twofer-goofer");
         expectedLinks.put("Advanced search", "https://www.rhymezone.com/adv/");
         expectedLinks.put("Help", "https://www.rhymezone.com/help/");
         expectedLinks.put("Feedback", "https://docs.google.com/forms/d/e/1FAIpQLSfZIJ8xjp9uIVKwyYRMlh1ie6s1u3tmtcLUsGjplbgD8m0FXg/viewform");
         expectedLinks.put("Privacy", "https://www.rhymezone.com/privacy-policy");
         expectedLinks.put("Terms of Use", "https://www.rhymezone.com/terms-of-use");
-        expectedLinks.put("Do not sell or share my personal information.", "https://www.rhymezone.com/");
+        expectedLinks.put("Do not sell or share my personal information.", "https://www.rhymezone.com/#");
 
         List<String> verification = new ArrayList<>();
 
